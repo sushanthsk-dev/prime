@@ -1,0 +1,49 @@
+<mvc:View xmlns:table="sap.ui.table" controllerName="prime.ui5.controller.UsersAccount" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m">
+    <mvc:XMLView viewName="prime.ui5.view.Header" />    
+  
+    <Panel headerText="Users"  class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer">
+           <Table id="users-list" items="{Users>/}">
+                <headerToolbar>
+                    <Toolbar class="sapUiLargeMarginBottom">
+
+                        <ToolbarSpacer />
+                        <SearchField  id="search-user" width="40%" liveChange="onSearchUser"/>
+                        <Button text="Create" press="onPressUserCreate"/>   
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column >
+                        <Text text="User Id" />
+                    </Column>
+                    <Column>
+                        <Text text="First Name"/>
+                    </Column>
+                    <Column>
+                        <Text text="Last Name"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{Users>userId}" />
+                            <Text text="{Users>firstName}" />
+                            <Text text="{Users>lastName}" />
+                            <Text text="{User>startDate}" />
+                            <Text text="{User>endDate}" />
+                            <Text text="{User>status/name}" />
+                            <ObjectNumber number="{
+                                path: 'User>cost',
+                                type: 'sap.ui.mode.type.Currency',
+                                formatOptions:{
+                                    showMeasure: true
+                                }
+                            
+                            }"
+                            unit="{User>currency_code}"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+    </Panel>
+</mvc:View>

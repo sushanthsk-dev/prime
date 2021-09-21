@@ -1,0 +1,27 @@
+<mvc:View controllerName="prime.ui5.controller.Home" xmlns:tnt="sap.tnt" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" >
+    
+    
+    <mvc:XMLView viewName="prime.ui5.view.Header" />
+    <Page id="accountList" showHeader="false" visible="true">
+        <layout:VerticalLayout class="sapUiResponsiveMargin" >
+        <Title text="My Home" class="sapUiLargeMarginTop sapUiLargeMarginBegin"/>
+        <layout:HorizontalLayout class="sapUiResponsiveMargin" >
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="View Accounts"
+            press=".onAccountListPress"
+            frameType="OneByOne"
+            >
+            </GenericTile>
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="View Users"
+            press=".onUsersPress"
+            frameType="OneByOne"
+            >
+            </GenericTile>
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="View account associated users"
+            press=".onuserAssociatedAccount"
+            frameType="OneByOne"
+            >
+            </GenericTile>
+        </layout:HorizontalLayout>
+        </layout:VerticalLayout>
+    </Page>
+</mvc:View>

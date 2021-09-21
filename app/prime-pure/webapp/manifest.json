@@ -1,0 +1,203 @@
+{
+    "_version": "1.1.0",
+	
+	"start_url": "<startUrl>",
+	
+    "sap.app": {
+        "_version": "1.1.0",
+        "id": "prime.ui5",
+        "type": "application",
+        "i18n": "i18n.i18n.properties",
+        "applicationVersion": {
+            "version": "<version>"
+        },
+        "title": "{{<title>}}",
+        "tags": {
+            "keywords": [
+                "{{<keyword1>}}", "{{<keyword2>}}"
+            ]
+        },
+        "description": "Hello WOrld",
+        "dataSources": {
+            "PrimeService": {
+                "uri": "/api/PrimeService/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "_version": "1.1.0",
+        "icons": {
+            "icon": "<icon>",
+            "favIcon": "<favIcon>",
+            "phone": "<phone>",
+            "phone@2": "<phone@2>",
+            "tablet": "<tablet>",
+            "tablet@2": "<tablet@2>"
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_bluecrystal"
+        ]
+    },
+    "sap.ui5": {
+        "_version": "1.1.0",
+        "resources": {
+            "js": [
+                {
+                    "uri": "<uri>"
+                }
+            ],
+            "css": [
+                {
+                    "uri": "<uri>",
+                    "id": "<id>"
+                }
+            ]
+        },
+        "dependencies": {
+            "minUI5Version": "1.60",
+            "libs": {
+                "sap.m":{}
+            }
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+               "settings": {
+                   "bundleName": "prime.ui5.i18n.i18n",
+                   "supportedLocales": [""],
+                   "fallbackLocale": ""
+               }
+            },
+            "":{
+                "dataSource": "PrimeService",
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect" : true,
+                    "earlyRequests": true,
+                    "groupProperties": {
+                        "default": {
+                            "submit": "Auto"
+                        }
+                    }
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "prime.ui5.view.App",
+            "id": "app",
+            "type": "XML",
+            "async": true
+        },
+        "handleValidation": false,
+        "config": {
+          
+        },
+        "routing": {
+            "config":{
+                "routerClass": "sap.m.routing.Router",
+                "viewPath": "prime.ui5.view",
+                "viewType": "XML",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "async": true
+            },
+            "routes":[
+                {
+                    "pattern": "",
+                    "name": "home",
+                    "target":"home"
+                },
+                {
+                    "pattern": "accounts-list",
+                    "name": "accounts",
+                    "target":"accounts"
+                },
+                {
+                    "pattern": "account/{accountId}",
+                    "name": "account",
+                    "target":"account"
+                },
+                {
+                    "pattern": "create-account",
+                    "name": "createAccount",
+                    "target":"createAccount"
+                },
+                {
+                    "pattern": "create-user",
+                    "name": "createUser",
+                    "target":"createUser"
+                },
+                {
+                    "pattern": "users-account",
+                    "name": "usersAccount",
+                    "target":"usersAccount"
+                },
+                {
+                    "pattern": "accounts-associated-user",
+                    "name": "accountsAssociatedUser",
+                    "target":"accountsAssociatedUser"
+                }
+            ],
+            "targets": {
+                "home":{
+                    "viewName": "Home",
+                    "viewId": "home"
+                },
+                "accounts":{
+                    "viewName": "AccountList",
+                    "viewId": "accountList"
+                },
+                "account":{
+                    "viewName": "Account",
+                    "viewId": "account"
+                },
+                "createAccount":{
+                    "viewName": "CreateAccount",
+                    "viewId": "createAccount"
+                },                
+                "createUser":{
+                    "viewName": "CreateUser",
+                    "viewId": "createUser"
+                },
+                "usersAccount":{
+                    "viewName": "UsersAccount",
+                    "viewId": "usersAccount"
+                },
+                "accountsAssociatedUser":{
+                    "viewName": "UsersAssociatedAccount",
+                    "viewId": "userAssociatedAccount"
+                }
+            }
+          
+        },
+        "extends": {
+            "component" : "<extendedComponentId>",
+			"minVersion": "<minComp1Version>",
+			"extensions": {}
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        }
+    },
+
+    "sap.platform.abap": {
+        "_version": "1.1.0",
+        "uri": "<uri>"
+    },
+    "sap.platform.hcp": {
+        "_version": "1.1.0",
+        "uri": "<uri>"
+    }
+}

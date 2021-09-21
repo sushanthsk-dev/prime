@@ -1,0 +1,17 @@
+<mvc:XMLView
+	controllerName="prime.ui5.controller.App"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	displayBlock="true"
+	busyIndicatorDelay="0"
+	xmlns:tnt="sap.tnt"
+>
+<tnt:ToolHeader active="true"   >
+	<Button icon="sap-icon://navigation-left-arrow" press=".onNavBack"/>   
+	<Image src="https://sapui5.hana.ondemand.com/test-resources/sap/tnt/images/SAP_Logo.png" class="sapUiMediumMarginBegin" />
+	<Title text="accounts" />
+	<ToolbarSpacer />
+	<Avatar src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS" class="sapUiMediumMarginEnd" press=".onAvatarPressed" />
+</tnt:ToolHeader>
+</mvc:XMLView>

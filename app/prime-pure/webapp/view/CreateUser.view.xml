@@ -1,0 +1,55 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="prime.ui5.controller.CreateUser" 
+xmlns="sap.m"
+xmlns:l="sap.ui.layout"
+xmlns:f="sap.ui.layout.form"
+xmlns:core="sap.ui.core">
+    <mvc:XMLView viewName="prime.ui5.view.Header" />        
+    <Panel>
+        <VBox class="sapUiSmallMargin">
+            <f:Form id="create-user"
+                editable="true">
+                <f:title>
+                    <core:Title text="Create User" />
+                </f:title>
+                <f:layout>
+                    <f:ResponsiveGridLayout
+                        labelSpanXL="4"
+                        labelSpanL="4"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="2"
+                        columnsL="2"
+                        columnsM="2"
+                        singleContainerFullSize="false" />
+                </f:layout>
+                    <f:FormContainer>
+                            <f:FormElement label="User Id">
+                                <f:fields>
+                                    <Input  id="userId"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="First Name">
+                                <f:fields>
+                                    <Input  id="firstName" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Last Name">
+                                <f:fields>
+                                    <Input  id="lastName" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="">
+                                <f:fields>
+                                    <Button press="onCreateAccountPress" text="Create" class="sapUiSmallMarginTop"/>
+                                </f:fields>
+                            </f:FormElement>
+                    </f:FormContainer>
+            </f:Form>
+        </VBox>
+    </Panel>
+</mvc:View>

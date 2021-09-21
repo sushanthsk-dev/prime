@@ -1,0 +1,11 @@
+---
+spring:
+  web.resources.static-locations: "file:./app"
+  config.activate.on-profile: default
+cds:
+  odata-v4.endpoint.path: "/api"
+  datasource:
+    url: "jdbc:sqlite:/home/user/projects/demo-project/prime2/sqlite.db"
+    driver-class-name: org.sqlite.JDBC
+    initialization-mode: never
+    auto-config.enabled: false

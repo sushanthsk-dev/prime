@@ -1,0 +1,5 @@
+ID;accountId;description;status_code;plan_code;device_code;startDate;endDate;cost;currency_code;
+bee0d772-00bc-4f44-81e4-f01fd2926a7b;I516423;Primary Account;0;0;0;2020-07-03;2020-08-03;199;EUR;
+8bf46de6-e443-4303-a7ab-efca17d8611b;I311471;Secondary Account;1;1;1;2020-07-23;2020-08-23;799;AUD;
+d4bdb405-f44c-4156-9829-2e27f0cfa271;I311852;Minesh Account;1;2;2;2020-02-02;2020-03-03;199;USD;
+0a5ffdb1-4126-4e7a-8f90-9096d5986699;I311853;Test Account;0;3;2;2020-05-02;2020-06-03;2000;EUR;

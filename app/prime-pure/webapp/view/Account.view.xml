@@ -1,0 +1,43 @@
+<mvc:View xmlns:table="sap.ui.table" 	xmlns:l="sap.ui.layout" controllerName="prime.ui5.controller.Account" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m">
+
+    <mvc:XMLView viewName="prime.ui5.view.Header" />    
+         <Page showHeader="false">
+            <l:VerticalLayout
+            class="sapUiContentPadding"
+            width="40%">
+            <l:content>
+                <List 
+                    headerText="{Account>/description}" >
+                    <DisplayListItem
+                        label="Account Id"
+                        value="{Account>/accountId}" />
+                    <DisplayListItem
+                        label="Account plan"
+                        value="{Account>/plan/name}" />
+                    <DisplayListItem
+                        label="Cost"
+                        value="{Account>/cost} {Account>/currency_code}"
+                    />
+                    <DisplayListItem
+                        label="Device type"
+                        value="{Account>/device/name}" />
+                    <DisplayListItem
+                        label="Status"
+                        value="{Account>/status/name}" />
+                    <DisplayListItem
+                        label="Start Date"
+                        value="{Account>/startDate}"
+                    />
+                    <DisplayListItem
+                        label="End Date"
+                        value="{Account>/endDate}"
+                    />
+                    <DisplayListItem
+                        label="Total Users"
+                        value="{Account>/totalUser}"
+                    />
+                </List>
+            </l:content>
+        </l:VerticalLayout>
+    </Page>
+</mvc:View>

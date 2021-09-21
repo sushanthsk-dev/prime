@@ -1,0 +1,16 @@
+{
+    "welcomeFile":"index.html",
+    "authenticationMethod":"none",
+    "routes":[
+        {
+            "source": "/api/PrimeService/(.*)",
+            "target":"$1",
+            "destination":"primeapi"
+        },
+            {
+      "source": "/",
+      "target": "/",
+      "localDir": "webapp"
+    }
+    ]
+}

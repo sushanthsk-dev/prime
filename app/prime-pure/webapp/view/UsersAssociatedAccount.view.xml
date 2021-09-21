@@ -1,0 +1,59 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="prime.ui5.controller.UsersAssociatedAccount">
+    <mvc:XMLView viewName="prime.ui5.view.Header" />    
+    <Panel headerText="Accounts associated to User"  class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer">
+        <Table id="users-account-list" items="{AccountUsersModel>/}">
+            <headerToolbar>
+                <Toolbar class="sapUiLargeMarginBottom">
+
+                    <ToolbarSpacer />
+                    <SearchField  id="search-user" width="40%" liveChange="onSearchUser"/>
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column >
+                    <Text text="User Id" />
+                </Column>
+                <Column>
+                    <Text text="Name"/>
+                </Column>
+                <Column>
+                    <Text text="Account Id"/>
+                </Column>
+                <Column>
+                    <Text text="Account Name"/>
+                </Column>
+                <Column>
+                    <Text text="Account Status"/>
+                </Column>
+                <Column>
+                    <Text text="Device"/>
+                </Column>
+                <Column>
+                    <Text text="Plan"/>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{AccountUsersModel>user/userId}" />
+                        <Text text="{AccountUsersModel>user/firstName} {AccountUsersModel>user/lastName}" />
+                        <Text text="{AccountUsersModel>account/accountId}" />
+                        <Text text="{AccountUsersModel>account/description}" />
+                        <Text text="{
+                            path: 'AccountUsersModel>account/status_code',
+                            formatter: '.formatter.statusText'    
+                        }" />
+                        <Text text="{
+                            path: 'AccountUsersModel>account/device_code',
+                            formatter: '.formatter.deviceText'    
+                        }" />
+                        <Text text="{
+                            path: 'AccountUsersModel>account/plan_code',
+                            formatter: '.formatter.planText'    
+                        }" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+   </Panel>
+</mvc:View>

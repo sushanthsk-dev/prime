@@ -1,0 +1,62 @@
+<mvc:View xmlns:table="sap.ui.table" controllerName="prime.ui5.controller.AccountList" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m">
+
+    <mvc:XMLView viewName="prime.ui5.view.Header" />    
+    <Panel headerText="Account List"  class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer">
+            <Table id="account-list" items="{AccountList>/}">
+                <headerToolbar>
+                    <Toolbar class="sapUiLargeMarginBottom">
+                        <Title text="Accounts" />
+                        <ToolbarSpacer />
+                        <SearchField  id="search-account" width="40%" liveChange="onSearchAccount"/>
+                        <Button text="Create" press="onPressAccountCreate"/>   
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column >
+                        <Text text="Account Id" />
+                    </Column>
+                    <Column>
+                        <Text text="Account Name"/>
+                    </Column>
+                    <Column >
+                        <Text text="Plan"/>
+                    </Column>
+                    <Column>
+                        <Text text="Start Date" />
+                    </Column>
+                    <Column>
+                        <Text text="End Date"/>
+                    </Column>
+
+                    <Column>
+                        <Text text="Status"/>
+                    </Column>
+                    <Column>
+                        <Text text="Cost"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" press=".onPressAccount">
+                        <cells>
+                            <Text text="{AccountList>accountId}" />
+                            <Text text="{AccountList>description}" />
+                            <Text text="{AccountList>plan/name}" />
+                            <Text text="{AccountList>startDate}" />
+                            <Text text="{AccountList>endDate}" />
+                            <Text text="{AccountList>status/name}" />
+                            <ObjectNumber number="{
+                                path: 'AccountList>cost',
+                                type: 'sap.ui.mode.type.Currency',
+                                formatOptions:{
+                                    showMeasure: true
+                                }
+                            
+                            }"
+                            unit="{AccountList>currency_code}"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+    </Panel>
+</mvc:View>
